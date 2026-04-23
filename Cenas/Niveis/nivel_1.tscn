@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bpxgqjaolbkui"]
+
+[ext_resource type="PackedScene" uid="uid://byjwfbptqenwd" path="res://Cenas/plano_de_fundo.tscn" id="1_2m3x4"]
+[ext_resource type="PackedScene" uid="uid://d3mhco2dlaq54" path="res://Cenas/Mapas/mapa_1.tscn" id="2_vavxl"]
+
+[node name="Nivel1" type="Node2D" unique_id=1981161516]
+
+[node name="Plano_de_fundo" parent="." unique_id=93373735 instance=ExtResource("1_2m3x4")]
+position = Vector2(-5, 0)
+
+[node name="Mapa1" parent="." unique_id=107397366 instance=ExtResource("2_vavxl")]
+position = Vector2(1, 54)
