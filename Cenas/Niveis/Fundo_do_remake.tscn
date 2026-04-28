@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwpedxeu00o8o"]
+
+[ext_resource type="Texture2D" uid="uid://eohsq055sbyy" path="res://Artes/TileSet/New Piskel (23)/Layer 1_sprite_1.png" id="1_eiwyy"]
+
+[node name="Node2D" type="Node2D" unique_id=11230364]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1635319582]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1815933524]
+position = Vector2(335, 300)
+texture = ExtResource("1_eiwyy")
