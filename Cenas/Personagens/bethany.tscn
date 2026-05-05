@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://buajm5k85feg" path="res://Scripts/Personagens/bethany.gd" id="1_42usl"]
 [ext_resource type="Texture2D" uid="uid://b2nb0gmbt6oyf" path="res://Artes/Personagens/colordos/sprite idle2.png" id="2_0wgei"]
+[ext_resource type="Texture2D" uid="uid://dm264c2wx5r6h" path="res://Artes/Personagens/colordos/sprite idlewithgun.png" id="3_fpot6"]
 [ext_resource type="Texture2D" uid="uid://b8d6fgv5trv4c" path="res://Artes/Personagens/colordos/sprite shoting.png" id="3_ww448"]
 [ext_resource type="Texture2D" uid="uid://gae7bj7d4pgi" path="res://Artes/Personagens/colordos/sprite walking.png" id="4_fpot6"]
+[ext_resource type="Texture2D" uid="uid://cm5f5n6bsmbrm" path="res://Artes/Personagens/colordos/sprite wlaking with gun.png" id="6_y3b6g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3b6g"]
 atlas = ExtResource("2_0wgei")
+region = Rect2(0, 0, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7123"]
+atlas = ExtResource("3_fpot6")
 region = Rect2(0, 0, 244, 177)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5axxk"]
@@ -85,6 +91,46 @@ region = Rect2(0, 354, 244, 177)
 atlas = ExtResource("4_fpot6")
 region = Rect2(244, 354, 244, 177)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fyc3"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(0, 0, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw8gy"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(244, 0, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkykm"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(488, 0, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fkxh"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(732, 0, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh5ad"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(0, 177, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jmhp"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(244, 177, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6hry"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(488, 177, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3kdg"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(732, 177, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u368q"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(0, 354, 244, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rutj"]
+atlas = ExtResource("6_y3b6g")
+region = Rect2(244, 354, 244, 177)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_6mjy2"]
 animations = [{
 "frames": [{
@@ -93,6 +139,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7123")
+}],
+"loop": true,
+"name": &"idle_shootgun",
 "speed": 5.0
 }, {
 "frames": [{
@@ -161,6 +215,41 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fyc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw8gy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkykm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fkxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh5ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jmhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6hry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3kdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u368q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rutj")
+}],
+"loop": true,
+"name": &"walk_shootgun",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x68b"]
@@ -170,8 +259,8 @@ script = ExtResource("1_42usl")
 
 [node name="Animacoes" type="AnimatedSprite2D" parent="." unique_id=976080714]
 sprite_frames = SubResource("SpriteFrames_6mjy2")
-animation = &"walk"
-frame_progress = 0.38548663
+animation = &"walk_shootgun"
+frame_progress = 0.65039945
 
 [node name="Colisoes" type="CollisionShape2D" parent="." unique_id=103460082]
 shape = SubResource("RectangleShape2D_8x68b")
