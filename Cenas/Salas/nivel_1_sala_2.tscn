@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d1gq750ewqieq"]
+
+[ext_resource type="Script" uid="uid://bncgljalauhky" path="res://Scripts/Salas/nivel_1_sala_2.gd" id="1_vb5w1"]
+
+[node name="Nivel_1_Sala_2" type="Parallax2D" unique_id=1761610898]
+script = ExtResource("1_vb5w1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126056368]
