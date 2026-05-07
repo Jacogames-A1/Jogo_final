@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dutowxe1461xg"]
+
+[ext_resource type="Script" uid="uid://brsfsvyo3njm6" path="res://Scripts/Auxiliar/loading.gd" id="1_gtmyu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pywi2"]
+
+[node name="Loading" type="AnimatedSprite2D" unique_id=1282702797]
+sprite_frames = SubResource("SpriteFrames_pywi2")
+script = ExtResource("1_gtmyu")
