@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://dycapeum2navd"
+Loading="*uid://brsfsvyo3njm6"
 
 [physics]
 
