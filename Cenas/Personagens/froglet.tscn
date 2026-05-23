@@ -1,15 +1,52 @@
 [gd_scene format=3 uid="uid://sqoqrljvnq27"]
 
 [ext_resource type="Script" uid="uid://coqhgvwama1wu" path="res://Scripts/Personagens/froglet.gd" id="1_e2vsd"]
+[ext_resource type="Texture2D" uid="uid://bt4736dva3q3f" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet00.png" id="2_qtrsw"]
+[ext_resource type="Texture2D" uid="uid://brpvem7vuruxt" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet02.png" id="3_cddnk"]
+[ext_resource type="Texture2D" uid="uid://be4d4skajtqo4" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet03.png" id="4_owc2p"]
+[ext_resource type="Texture2D" uid="uid://bser5bhbrqy10" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet04.png" id="5_hna8l"]
+[ext_resource type="Texture2D" uid="uid://d1iq26g8lopiw" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet05.png" id="6_iwlpl"]
+[ext_resource type="Texture2D" uid="uid://ciixbpsvuekqo" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet06.png" id="7_0xs83"]
+[ext_resource type="Texture2D" uid="uid://biosya3qabac0" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet07.png" id="8_cbitv"]
+[ext_resource type="Texture2D" uid="uid://bu5c8mwwoh86d" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet08.png" id="9_cb80j"]
+[ext_resource type="Texture2D" uid="uid://cawsxov1lytdq" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet09.png" id="10_qw5qe"]
+[ext_resource type="Texture2D" uid="uid://btql7stjtcfji" path="res://Artes/Personagens/pixel art/boss/New Piskel/froglet01.png" id="11_ictlk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mu7gi"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qtrsw")
+}],
 "loop": true,
 "name": &"andar",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cddnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_owc2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hna8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iwlpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0xs83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cbitv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cb80j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qw5qe")
+}],
 "loop": true,
 "name": &"ataque1",
 "speed": 5.0
@@ -24,25 +61,32 @@ animations = [{
 "name": &"gosma",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ictlk")
+}],
 "loop": true,
 "name": &"hit",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68qfg"]
+size = Vector2(42, 52)
 
 [node name="Froglet" type="CharacterBody2D" unique_id=2045950023]
 script = ExtResource("1_e2vsd")
 
 [node name="Animacao" type="AnimatedSprite2D" parent="." unique_id=1495900474]
 sprite_frames = SubResource("SpriteFrames_mu7gi")
-animation = &"gosma"
+animation = &"andar"
+frame_progress = 0.19029506
 
 [node name="Colisao" type="CollisionShape2D" parent="." unique_id=697111916]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_68qfg")
 
 [node name="Boss_visivel" type="VisibleOnScreenEnabler2D" parent="." unique_id=2024075471]
+rect = Rect2(-21, -22, 42, 45)
 
 [connection signal="screen_entered" from="Boss_visivel" to="." method="_on_boss_visivel_screen_entered"]
 [connection signal="screen_exited" from="Boss_visivel" to="." method="_on_boss_visivel_screen_exited"]

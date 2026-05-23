@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://gaaxqgkyluym"]
+
+[ext_resource type="Script" uid="uid://dqnwy2ns74hew" path="res://Scripts/Itens/portal.gd" id="1_0plux"]
+[ext_resource type="Texture2D" uid="uid://dvqwnfjag728q" path="res://Artes/Itens/Sem_título-removebg-preview.png" id="1_gjpko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0plux"]
+size = Vector2(110, 92)
+
+[node name="Portal" type="Area2D" unique_id=385610914]
+script = ExtResource("1_0plux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1380140909]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_0plux")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=518498737]
+texture = ExtResource("1_gjpko")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

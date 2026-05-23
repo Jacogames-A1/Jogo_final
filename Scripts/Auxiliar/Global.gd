@@ -1,5 +1,8 @@
 extends Node
 
+var estado_puzzle = [false, false, false, false]
+var puzzle_solved = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

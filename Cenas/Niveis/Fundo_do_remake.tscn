@@ -5,6 +5,8 @@
 [node name="Node2D" type="Node2D" unique_id=11230364]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1635319582]
+repeat_size = Vector2(500, 100)
+repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1815933524]
 position = Vector2(335, 300)

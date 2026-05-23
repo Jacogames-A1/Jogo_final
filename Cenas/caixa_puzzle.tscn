@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cr6gorji541ha"]
+
+[ext_resource type="Script" uid="uid://cfvsvxnum5jby" path="res://Scripts/caixa_puzzle.gd" id="1_c7ytg"]
+[ext_resource type="Texture2D" uid="uid://b1crp81rj2wc3" path="res://Artes/New Piskel (14)/Layer 1_sprite_2.png" id="2_dw621"]
+[ext_resource type="Texture2D" uid="uid://co2fqcjrrrqi4" path="res://Artes/New Piskel (14)/Layer 1_sprite_3.png" id="3_peebv"]
+[ext_resource type="Texture2D" uid="uid://cj5b0e1v2rkct" path="res://Artes/New Piskel (14)/Layer 1_sprite_4.png" id="4_3uqrk"]
+[ext_resource type="Texture2D" uid="uid://d3ga62mm3ejil" path="res://Artes/New Piskel (14)/Layer 1_sprite_1.png" id="5_50qk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpq7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeqcw"]
+atlas = ExtResource("2_dw621")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep3tw"]
+atlas = ExtResource("3_peebv")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap3kf"]
+atlas = ExtResource("4_3uqrk")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66bdg"]
+atlas = ExtResource("5_50qk4")
+region = Rect2(0, 0, 576, 576)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwhq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeqcw")
+}],
+"loop": true,
+"name": &"amarelo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep3tw")
+}],
+"loop": true,
+"name": &"azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap3kf")
+}],
+"loop": true,
+"name": &"roxo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66bdg")
+}],
+"loop": true,
+"name": &"vermelho",
+"speed": 5.0
+}]
+
+[node name="Caixa_puzzle" type="Area2D" unique_id=1581724650]
+script = ExtResource("1_c7ytg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173533239]
+shape = SubResource("RectangleShape2D_gpq7j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1154782348]
+position = Vector2(0.4999991, 7.4999995)
+scale = Vector2(0.032986112, 0.03298611)
+sprite_frames = SubResource("SpriteFrames_cwhq7")
+animation = &"roxo"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

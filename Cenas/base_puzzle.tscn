@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bib5ngt76rsj1"]
+
+[ext_resource type="Script" uid="uid://xfjtgx4s7jc7" path="res://Scripts/base_puzzle.gd" id="1_8hi6v"]
+[ext_resource type="Texture2D" uid="uid://doqexauq1dgtg" path="res://Artes/New Piskel (15)/Layer 1_sprite_2.png" id="2_oxcei"]
+[ext_resource type="Texture2D" uid="uid://c140txyw1n46q" path="res://Artes/New Piskel (15)/Layer 1_sprite_4.png" id="3_8lulk"]
+[ext_resource type="Texture2D" uid="uid://chlu7i52q1o86" path="res://Artes/New Piskel (15)/Layer 1_sprite_1.png" id="4_v4pon"]
+[ext_resource type="Texture2D" uid="uid://8hlulg1h8piv" path="res://Artes/New Piskel (15)/Layer 1_sprite_3.png" id="5_qr0ew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntyps"]
+size = Vector2(20, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgx4i"]
+atlas = ExtResource("2_oxcei")
+region = Rect2(0, 288, 576, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiayi"]
+atlas = ExtResource("3_8lulk")
+region = Rect2(0, 288, 576, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0weya"]
+atlas = ExtResource("4_v4pon")
+region = Rect2(0, 288, 576, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0q5f"]
+atlas = ExtResource("5_qr0ew")
+region = Rect2(0, 288, 576, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22s5h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgx4i")
+}],
+"loop": true,
+"name": &"amarelo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiayi")
+}],
+"loop": true,
+"name": &"azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0weya")
+}],
+"loop": true,
+"name": &"roxo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0q5f")
+}],
+"loop": true,
+"name": &"vermelho",
+"speed": 5.0
+}]
+
+[node name="Base_puzzle" type="Area2D" unique_id=1401970613]
+script = ExtResource("1_8hi6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=246958138]
+shape = SubResource("RectangleShape2D_ntyps")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1926019510]
+position = Vector2(0, -3.0000002)
+scale = Vector2(0.0329861, 0.04340278)
+sprite_frames = SubResource("SpriteFrames_22s5h")
+animation = &"azul"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
